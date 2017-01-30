@@ -4,7 +4,7 @@ var React = require('react');
 var Home = require('./components/homePage');
 var About = require('./components/about/aboutPage');
 var Header = require('./components/common/header');
-
+var Authors = require('./components/authors/authorPage');
 
 class App extends React.Component {
   render() {
@@ -12,6 +12,7 @@ class App extends React.Component {
 
     switch(this.props.route) {
       case 'about': Child = About; break;
+      case 'authors': Child = Authors; break;
       default: Child = Home;
     }
     return (
@@ -25,12 +26,10 @@ class App extends React.Component {
 
 function render() {
   var route = window.location.hash.substr(1);
-  console.log('route ' + route);
   ReactDOM.render(<App route={route} />, document.getElementById('app'));
 }
 
 window.addEventListener('hashchange', render);
-console.log('line 30');
 render();
 
 ReactDOM.render(<App />, document.getElementById('app'));
