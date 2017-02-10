@@ -1,3 +1,5 @@
+/*eslint-disable react/jsx-sort-prop-types*/
+
 module.exports = {
 	authors:
 	[
