@@ -1,10 +1,13 @@
+/*eslint-disable react/jsx-sort-prop-types*/
+
 "use strict";
 
 var React = require('react');
+var ReactDom = require('react-dom');
 var AuthorAPi = require('../../api/authorApi');
 var AuthorList = require('./authorsList');
 
-class Authors extends React.Component {
+class AuthorPage extends React.Component {
   constructor(props) {
     super(props);
         this.authors = [];
@@ -31,4 +34,8 @@ class Authors extends React.Component {
     }
 }
 
-module.exports = Authors;
+AuthorPage.propTypes = {
+  authors: React.PropTypes.array.isRequired
+};
+
+module.exports = AuthorPage;

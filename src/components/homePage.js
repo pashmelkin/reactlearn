@@ -1,3 +1,4 @@
+/*eslint-disable react/jsx-sort-prop-types*/
 "use strict";
 
 var React = require('react');

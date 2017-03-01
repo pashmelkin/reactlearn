@@ -1,3 +1,5 @@
+
+/*eslint-disable react/jsx-sort-prop-types*/
 "use strict";
 
 var React = require('react');
@@ -13,7 +15,7 @@ class About extends React.Component {
             <li> React router</li>
             <li> flux </li>
             <li> Gulp </li>
-          </ul>        
+          </ul>
       </div>
     );
   }
