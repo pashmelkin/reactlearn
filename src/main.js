@@ -1,8 +1,13 @@
 "use strict";
 var ReactDOM = require('react-dom');
 var React = require('react');
-var Router = require('react-router');
-var routes = require('./routes');
+var { Router, Route, DefaultRoute, hashHistory } = require('react-router');
+var Home = require('./components/homePage.js');
 
-ReactDOM.render(
-  <Router>{routes}</Router>, document.getElementById('app')) ;
+ReactDOM.render((
+  <Router history = {hashHistory}>
+       <Route name ="app" path="/" component={Home} >
+      </Route>
+  </Router>
+    ),
+document.getElementById('app')) ;
