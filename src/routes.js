@@ -2,9 +2,7 @@
 
 var React = require ('react');
 
-var Router = require('react-router');
-var DefaultRoute = Router.DefaultRoute;
-var Route = Router.Route;
+var { Router, Route, DefaultRoute, hashHistory } = require('react-router');
 
 var routes = (
   <Route name ="app" path="/" handler={require('./components/app')}>
