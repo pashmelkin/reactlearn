@@ -6,30 +6,27 @@ var About = require('./components/about/aboutPage');
 var Header = require('./components/common/header');
 var Authors = require('./components/authors/authorPage');
 
+var { Router, Route, IndexRoute, Link, hashHistory } = require('react-router');
+
+
 class App extends React.Component {
   render() {
-    var Child;
 
-    switch(this.props.route) {
-      case 'about': Child = About; break;
-      case 'authors': Child = Authors; break;
-      default: Child = Home;
-    }
     return (
       <div>
           <Header/>
-          <Child/>
+          {this.props.children}
       </div>
     );
   }
 }
 
-function render() {
-  var route = window.location.hash.substr(1);
-  ReactDOM.render(<App route={route} />, document.getElementById('app'));
-}
 
-window.addEventListener('hashchange', render);
-render();
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render((
+    <Router history = {hashHistory}>
+        <Route path="/" component={App} >
+        <IndexRoute component={Home} />
+         <Route name="authors" path="authors" component={require('./components/authors/authorPage')} />
+         <Route name="about" path= "about" component={require('./components/about/aboutPage')} />
+        </Route>
+    </Router>),document.getElementById('app')) ;
