@@ -1,20 +1,17 @@
-/*eslint-disable react/jsx-sort-prop-types*/
-
 "use strict";
 
 var React = require('react');
 var Header = require('./common/header');
 
 class App extends React.Component {
-  render() {
-    return (
-      <div>
-          <Header/>
-          <div className="container-fluid">
-          </div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Header/>
+                {this.props.children}
+            </div>
+        );
+    }
 }
 
 module.exports = App;

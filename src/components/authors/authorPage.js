@@ -34,8 +34,5 @@ class AuthorPage extends React.Component {
     }
 }
 
-AuthorPage.propTypes = {
-  authors: React.PropTypes.array.isRequired
-};
 
 module.exports = AuthorPage;

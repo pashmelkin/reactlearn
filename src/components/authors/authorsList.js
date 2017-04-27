@@ -34,4 +34,7 @@ class AuthorList extends React.Component {
     }
 }
 
+AuthorList.propTypes = {
+    authors: React.PropTypes.array.isRequired
+};
 module.exports = AuthorList;
